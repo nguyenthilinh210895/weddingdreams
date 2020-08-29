@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule danh-sach-cac-goi index.php?controller=plan
