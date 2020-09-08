@@ -1,2 +1,38 @@
+#.htaccess, nằm cùng cấp với file index.php gốc của ứng dụng
+# File này thường dùng cho việc viết lại url (rewrite) dạng url
+#thân thiện
+#File này là 1 file rất nhạy cảm, chỉ thừa/thiếu 1 ký tự là sẽ
+#chết trang
+# cần chú ý khi chỉnh sửa file này
+# thường sẽ nhớ máy móc, chứ ko nên học kỹ về cú pháp của
+#file này
+#khai báo cho phép sử dụng rewrite url trên hệ thống
+#viết rewrite cho trang chi tiết sản phẩm
+#cần xác định các giá trị động để dùng biểu thức regex tương ứng
+#.* -> đại diệ cho ký tự bất kỳ, xuất hiện ít nhất 1 lần trở lên
+#[0-9]{1,}: chỉ các ký tự số, xuất hiện ít nhất 1 lần
+#có thể dùng regex để bắt validate luôn cho các tham số
+#mà ko cần bắt trực tiếp trong code PHP
+#Cú pháp: RewriteRule <link-giả> <link-mvc-thật>
+#Trong link-giả có bao nhiêu chuỗi regex thì tương ứng
+#trong link-thật sẽ sử dụng ký tự $<vi-trí-regex-của-link-giả>
+#để đón lấy giá trị tương ứng
 RewriteEngine On
+
+#Packages
 RewriteRule danh-sach-cac-goi index.php?controller=plan
+RewriteRule them-moi-goi index.php?controller=plan&action=add
+RewriteRule chi-tiet-goi/([0-9]{1,}) index.php?controller=plan&action=detail&id=$1
+RewriteRule chinh-sua-goi/([0-9]{1,}) index.php?controller=plan&action=update&id=$1
+RewriteRule xoa-goi/([0-9]{1,}) index.php?controller=plan&action=delete&id=$1
+
+#Blogs
+RewriteRule danh-sach-cac-tin index.php?controller=blog
+RewriteRule them-moi-tin index.php?controller=blog?action=add
+
+#Blog Categories
+RewriteRule danh-sach-cac-loai-tin index.php?controller=blogCategory
+RewriteRule them-moi-loai-tin index.php?controller=blogCategory&action=add
+RewriteRule chi-tiet-loai-tin/([0-9]{1,}) index.php?controller=blogCategory&action=detail&id=$1
+RewriteRule chinh-sua-loai-tin/([0-9]{1,}) index.php?controller=blogCategory&action=update&id=$1
+RewriteRule xoa-loai-tin/([0-9]{1,}) index.php?controller=blogCategory&action=delete&id=$1

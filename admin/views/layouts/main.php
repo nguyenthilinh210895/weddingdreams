@@ -10,6 +10,8 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- RewriteURl -->
+    <base href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"/>
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,6 +38,7 @@
 
     <!-- Custom Theme Style -->
     <link href="assets/build/css/custom.min.css" rel="stylesheet">
+    <link href="assets/css/mystyle.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -55,7 +58,42 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+            <div class="row">
+                <?php if(isset($_SESSION['error'])): ?>
+                <div class="col-12 alert alert-secondary alert-message" role="alert">
+                    <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                     ?>
+                </div>
+                 <?php endif; ?>
+                 <?php if(isset($_SESSION['success'])): ?>
+                <div class="col-12 alert alert-secondary alert-message" role="alert">
+                    <?php
+                    echo $_SESSION['success'];
+                    unset($_SESSION['success']);
+                    ?>
+                </div>
+                <?php endif; ?>
+                <script>
+                    setTimeout(
+                        ()=> document.querySelector('.alert-message').classList.add('hide-alert-message'), 4000);
+
+                </script>
+
+            </div>
             <?php
+            if(isset($this->error)){
+                echo $this->error;
+            }
+            if(isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+            }
+            if(isset($_SESSION['success'])){
+                echo $_SESSION['success'];
+                unset($_SESSION['success']);
+            }
             echo $this->content;
             ?>
             <!-- top tiles -->

@@ -66,6 +66,8 @@
                     <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="danh-sach-cac-goi">Plans</a></li>
+                            <li><a href="danh-sach-cac-tin">Blog</a></li>
+                            <li><a href="danh-sach-cac-loai-tin">Blog Categories</a></li>
                             <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                         </ul>
                     </li>

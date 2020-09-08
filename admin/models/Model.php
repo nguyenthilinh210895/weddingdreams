@@ -8,10 +8,10 @@
 require_once "configs/Database.php";
 class Model
 {
-    public $connectinon;
+    public $connection;
     public function __construct()
     {
-        $this->connectinon = $this->getConnection();
+        $this->connection = $this->getConnection();
     }
 
     public function getConnection(){
