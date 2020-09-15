@@ -28,7 +28,10 @@ RewriteRule xoa-goi/([0-9]{1,}) index.php?controller=plan&action=delete&id=$1
 
 #Blogs
 RewriteRule danh-sach-cac-tin index.php?controller=blog
-RewriteRule them-moi-tin index.php?controller=blog?action=add
+RewriteRule them-moi-tin index.php?controller=blog&action=add
+RewriteRule chi-tiet-tin/([0-9]{1,}) index.php?controller=blog&action=detail&id=$1
+RewriteRule chinh-sua-tin/([0-9]{1,}) index.php?controller=blog&action=update&id=$1
+RewriteRule xoa-tin/([0-9]{1,}) index.php?controller=blog&action=delete&id=$1
 
 #Blog Categories
 RewriteRule danh-sach-cac-loai-tin index.php?controller=blogCategory
