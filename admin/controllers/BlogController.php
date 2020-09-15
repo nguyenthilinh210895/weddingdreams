@@ -11,8 +11,16 @@ require_once "models/BlogCategory.php";
 class BlogController extends Controller
 {
     public function index(){
+        $params = [];
+        if(isset($_POST['filter'])){
+            if(isset($_POST['title'])){
+                $str_title = $_POST['title'];
+                $str_title = "blogs.title LIKE '%$str_title%'";
+                $params['str_title'] = $str_title;
+            }
+        }
         $blog_model = new Blog();
-        $blogs = $blog_model->getAll();
+        $blogs = $blog_model->getAll($params);
         $this->content = $this->render('views/blogs/index.php',[
             'blogs' => $blogs
         ]);

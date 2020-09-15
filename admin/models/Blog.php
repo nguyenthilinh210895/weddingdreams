@@ -17,10 +17,15 @@ class Blog extends Model
     public $created_at;
     public $updated_at;
 
-    public function getAll(){
+    public function getAll($params = []){
+        $str_title = "";
+        if(isset($params['str_title'])){
+            $str_title = " AND ".$params['str_title'];
+        }
         $sql = "SELECT blogs.*, blog_categories.name AS blog_category_name
                 FROM blogs INNER JOIN blog_categories
                 ON blog_categories.id = blogs.blog_category_id
+                WHERE TRUE $str_title
                 ";
         $obj =  $this->connection->prepare($sql);
         $obj->execute();

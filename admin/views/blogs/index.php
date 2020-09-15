@@ -6,6 +6,26 @@
  * Time: 4:36 PM
  */
 ?>
+<h2>Form tìm kiếm</h2>
+<form action="" method="POST">
+    <input type="hidden" name="controller" value="blog"/>
+    <input type="hidden" name="action" value="index"/>
+    <label for="title">Nhập title</label>
+    <input type="text" id="title" name="title"
+           value="<?php if(isset($_POST['title'])) echo $_POST['title'];?>"
+           class="form-group"
+    />
+    <div class="form-group">
+        <input type="submit" name="filter" value="Search"
+               class="btn btn-success"
+        />
+        <a class="btn btn-default"
+           href="danh-sach-cac-tin"
+        >
+            Xóa filter
+        </a>
+    </div>
+</form>
 <h4>
     <a href="them-moi-tin" class="add-a-new-card">Thêm mới</a>
 </h4>
