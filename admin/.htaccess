@@ -47,7 +47,7 @@ RewriteRule sua-loai-dich-vu/([0-9]{1,}) index.php?controller=serviceCategory&ac
 RewriteRule xoa-loai-dich-vu/([0-9]{1,}) index.php?controller=serviceCategory&action=delete&id=$1
 
 #Services
-RewriteRule dach-sach-cac-dich-vu index.php?controller=service
+RewriteRule danh-sach-cac-dich-vu index.php?controller=service
 RewriteRule them-moi-dich-vu index.php?controller=service&action=add
 RewriteRule sua-dich-vu/([0-9]{1,}) index.php?controller=service&action=update&id=1
 RewriteRule xoa-dich-vu/([0-9]{1,}) index.php?controller=service&action=delete&id=$1
