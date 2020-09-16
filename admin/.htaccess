@@ -39,3 +39,16 @@ RewriteRule them-moi-loai-tin index.php?controller=blogCategory&action=add
 RewriteRule chi-tiet-loai-tin/([0-9]{1,}) index.php?controller=blogCategory&action=detail&id=$1
 RewriteRule chinh-sua-loai-tin/([0-9]{1,}) index.php?controller=blogCategory&action=update&id=$1
 RewriteRule xoa-loai-tin/([0-9]{1,}) index.php?controller=blogCategory&action=delete&id=$1
+
+#Service Categories
+RewriteRule danh-sach-cac-loai-dich-vu index.php?controller=serviceCategory
+RewriteRule them-moi-loai-dich-vu index.php?controller=serviceCategory&action=add
+RewriteRule sua-loai-dich-vu/([0-9]{1,}) index.php?controller=serviceCategory&action=update&id=$1
+RewriteRule xoa-loai-dich-vu/([0-9]{1,}) index.php?controller=serviceCategory&action=delete&id=$1
+
+#Services
+RewriteRule dach-sach-cac-dich-vu index.php?controller=service
+RewriteRule them-moi-dich-vu index.php?controller=service&action=add
+RewriteRule sua-dich-vu/([0-9]{1,}) index.php?controller=service&action=update&id=1
+RewriteRule xoa-dich-vu/([0-9]{1,}) index.php?controller=service&action=delete&id=$1
+

@@ -60,7 +60,7 @@
         <div class="right_col" role="main">
             <div class="row">
                 <?php if(isset($_SESSION['error'])): ?>
-                <div class="col-12 alert alert-secondary alert-message" role="alert">
+                <div class="col-12 alert alert-danger alert-message" role="alert">
                     <?php
                         echo $_SESSION['error'];
                         unset($_SESSION['error']);
@@ -68,7 +68,7 @@
                 </div>
                  <?php endif; ?>
                  <?php if(isset($_SESSION['success'])): ?>
-                <div class="col-12 alert alert-secondary alert-message" role="alert">
+                <div class="col-12 alert alert-success alert-message" role="alert">
                     <?php
                     echo $_SESSION['success'];
                     unset($_SESSION['success']);
